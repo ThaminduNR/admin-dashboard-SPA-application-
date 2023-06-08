@@ -1,18 +1,18 @@
-export class  item {
+export class  Item {
 
-    constructor(productId,name,qty,price) {
-        this._productId = productId;
+    constructor(itemId,name,qty,price) {
+        this._itemId = itemId;
         this._name = name;
         this._qty = qty;
         this._price = price;
     }
 
-    get productId() {
-        return this._productId;
+    get itemId() {
+        return this._itemId;
     }
 
-    set productId(productId) {
-        this._productId = productId;
+    set  itemId(itemId) {
+        this._itemId = itemId;
     }
 
     get name() {

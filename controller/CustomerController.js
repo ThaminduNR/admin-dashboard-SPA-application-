@@ -1,7 +1,6 @@
 import {Customer} from "../models/customer.js";
 import {saveCustomerDB,getCustomerDB,updateCustomer,deleteCustomer} from "../db/db2.js";
 
-const data = "DATA";
 export class CustomerController{
    constructor() {
 
@@ -19,7 +18,7 @@ export class CustomerController{
      console.log(customer_data_arr);
 
      customer_data_arr.map((result, index) => {
-       var row = "<tr>" + "<td>" +
+       const row = "<tr>" + "<td>" +
            result._custId +
            "</td>" + "<td>" +
            result._fName +
@@ -65,6 +64,8 @@ export class CustomerController{
 
     let new_customer = new Customer(customer_id,customer_first_name,customer_last_name,customer_address);
     saveCustomerDB(new_customer);
+    this.handleLoadCustomer();
+    this.clearTextField();
 
   }
 
@@ -80,22 +81,14 @@ export class CustomerController{
 
     let customer = new Customer(customer_id,customer_first_name,customer_last_name,customer_address);
     updateCustomer(customer);
+    this.handleLoadCustomer();
+    this.clearTextField();
 
   }
 
 
   handleDeleteCustomer(){
     console.log("Handel Delete");
-
-    /*let id = $("#customer_id").val();
-
-    let arr = getCustomerDB();
-
-    let index = arr.findIndex((value) => value.customer_id === id);
-    console.log(index);
-    arr.splice(index, 1);
-
-    localStorage.setItem(data, JSON.stringify(arr));*/
 
     let customer_id = $("#customer_id").val();
     let customer_first_name = $("#first_name").val();
@@ -104,6 +97,8 @@ export class CustomerController{
 
     let customer  = new Customer(customer_id,customer_first_name,customer_last_name,customer_address);
     deleteCustomer(customer);
+    this.handleLoadCustomer();
+    this.clearTextField();
 
   }
 
@@ -122,13 +117,17 @@ export class CustomerController{
       $("#customer_address").val(address);
     });
   }
+
+  clearTextField(){
+    $("#customer_id").val("");
+    $("#first_name").val("");
+    $("#last_name").val("");
+    $("#customer_address").val("");
+  }
 }
 new CustomerController();
 //---------------------------------------------------------
 
-$("#btn_reset").on("click", function () {
-  console.log("--------------yes done");
-});
 
 
 
