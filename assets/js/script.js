@@ -27,3 +27,5 @@ $("#placeOrder").click(() => {
   $("#productForm").css({ display: "none" });
   $("#placeOrderForm").css({ display: "block" });
 });
+
+
