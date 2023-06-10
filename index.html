@@ -44,7 +44,7 @@
         <div class="menu-item d-flex justify-content-center align-items-center" id="placeOrder">
             <a href="#">Place Order</a>
         </div>
-        <div class="menu-item d-flex justify-content-center align-items-center" id="placeOrder">
+        <div class="menu-item d-flex justify-content-center align-items-center" id="placeOrderLink">
             <a href="https://github.com/ThaminduNR/admin-dashboard-Single-Page-Application.git" target="_blank">Git hub
                 Link</a>
         </div>
@@ -174,21 +174,21 @@
                         <div class="col-md-4">
                             <label for="custIdSet" class="form-label">Customer ID</label>
                             <select id="custIdSet" class="form-select">
-                                <option selected>Choose...</option>
+                                <option selected>Choose</option>
                                 <option>...</option>
                             </select>
                         </div>
 
                         <div class="col-md-4">
-                            <label for="itemIdSet" class="form-label">Product ID</label>
+                            <label for="itemIdSet" class="form-label">Item ID</label>
                             <select id="itemIdSet" class="form-select">
-                                <option selected>Choose...</option>
+                                <option selected>Choose</option>
                                 <option>...</option>
                             </select>
                         </div>
                         <div class="col-4">
-                            <label for="inputProduct" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" id="inputProduct">
+                            <label for="itemName" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="itemName">
                         </div>
 
 
@@ -204,9 +204,13 @@
                             <label for="qty" class="form-label">Qty</label>
                             <input type="text" class="form-control" id="qty">
                         </div>
+                        <div class="col-md-4">
+                            <label for="total" class="form-label">Total</label>
+                            <input type="text" class="form-control" id="total">
+                        </div>
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Add to cat</button>
+                            <button type="submit" class="btn btn-primary" id="addToCart">Add to cat</button>
                             <button type="submit" class="btn btn-danger">Cancel</button>
                         </div>
                     </form>
@@ -219,12 +223,7 @@
                     <table class="table bg-white rounded shadow-sm  table-hover">
                         <thead>
                             <tr>
-
-                                <th scope="col">Order ID</th>
-                                <th scope="col">Customer ID</th>
-                                <th scope="col">Product ID</th>
-                                <th scope="col">Product Name</th>
-                                <th scope="col">Unit Price</th>
+                                <th scope="col">Item ID</th>
                                 <th scope="col">Qty</th>
                                 <th scope="col">Total</th>
                             </tr>
@@ -241,8 +240,8 @@
             <div class="place-orderbtn">
                 <form class="d-flex container">
                     <div class="col-md-3 px-1 d-flex gap-4 ">
-                        <label for="total" class="form-label">Total</label>
-                        <input type="text" class="form-control" id="total">
+                        <label for="total-cost" class="form-label">Total</label>
+                        <input type="text" class="form-control" id="total-cost">
                     </div>
                     <div class="ms-auto">
                         <Button class="btn btn-secondary">Place Order</Button>
@@ -256,6 +255,7 @@
     <script src="assets/js/script.js"></script>
     <script src="controller/CustomerController.js" type="module"></script>
     <script src="controller/ItemController.js" type="module"></script>
+    <script src="controller/OrderController.js" type="module"></script>
     <script src="db/db2.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
