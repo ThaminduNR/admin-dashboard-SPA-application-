@@ -124,6 +124,8 @@ export class CustomerController{
     $("#last_name").val("");
     $("#customer_address").val("");
   }
+
+
 }
 new CustomerController();
 //---------------------------------------------------------

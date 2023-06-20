@@ -94,6 +94,8 @@ export class ItemController{
         $("#price").val("");
     }
 
+
+
 }
 
 new ItemController();

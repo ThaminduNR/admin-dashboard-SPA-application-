@@ -175,7 +175,6 @@
                             <label for="custIdSet" class="form-label">Customer ID</label>
                             <select id="custIdSet" class="form-select">
                                 <option selected>Choose</option>
-                                <option>...</option>
                             </select>
                         </div>
 
@@ -183,7 +182,7 @@
                             <label for="itemIdSet" class="form-label">Item ID</label>
                             <select id="itemIdSet" class="form-select">
                                 <option selected>Choose</option>
-                                <option>...</option>
+
                             </select>
                         </div>
                         <div class="col-4">
@@ -220,20 +219,16 @@
             <div class="row my-5 container-fluid">
                 <h3 class="fs-4 mb-3">Cart</h3>
                 <div class="col">
-                    <table class="table bg-white rounded shadow-sm  table-hover">
+                    <table class="table bg-white rounded shadow-sm  table-hover" id="cartTbl">
                         <thead>
                             <tr>
                                 <th scope="col">Item ID</th>
                                 <th scope="col">Qty</th>
                                 <th scope="col">Total</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
 
-                            </tr>
-
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -244,7 +239,7 @@
                         <input type="text" class="form-control" id="total-cost">
                     </div>
                     <div class="ms-auto">
-                        <Button class="btn btn-secondary">Place Order</Button>
+                        <Button class="btn btn-secondary" id="place-btn">Place Order</Button>
                     </div>
                 </form>
             </div>
