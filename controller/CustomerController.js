@@ -39,9 +39,10 @@ export class CustomerController{
      var customer_last_name = $("#last_name").val();
      var customer_address = $("#customer_address").val();
 
-     const regexNumber= /^\d+$/;
-     if (!regexNumber.test(customer_id)){
+     const regexID= /^(CM-)([0-9]{4,}$)/;
+     if (!regexID.test(customer_id)){
        alert("Invalid Id");
+       customer_id.css({border:"1px solid red"});
      }else if(!customer_first_name){
        alert("Invalid First Name");
      }else if(!customer_last_name){

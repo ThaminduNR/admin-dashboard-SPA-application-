@@ -32,7 +32,7 @@
         <div class="welcome d-flex justify-content-center align-items-center ">
             <h4>Hello Admin.</h4>
         </div>
-        <div class="menu-item d-flex justify-content-center align-items-center">
+        <div class="menu-item d-flex justify-content-center align-items-center" id="dashboard">
             <a href="#">Dashboard</a>
         </div>
         <div class="menu-item d-flex justify-content-center align-items-center" id="customer">
@@ -51,6 +51,63 @@
     </div>
 
     <main class="main-content container-fluid">
+        <section id="dashboardForm">
+            <h2 class="p-2 fw-bold">Dashboard</h2>
+            <div class="container-fluid px-4">
+                <div class="row g-3 my-2">
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                            <div>
+                                <h3 class="fs-2">70</h3>
+                                <p class="fs-5">Products</p>
+                            </div>
+                            <i class="fa-solid fa-cart-arrow-down  fs-1 bg-white"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                            <div>
+                                <h3 class="fs-2">49</h3>
+                                <p class="fs-5">Customers</p>
+                            </div>
+                            <i class="fa-solid fa-solid fa-users fs-1 primary-text"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                            <div>
+                                <h3 class="fs-2">100</h3>
+                                <p class="fs-5">Orders</p>
+                            </div>
+                            <i class="fas fa-solid fa-arrow-up-short-wide fs-1 primary-text"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center">
+                            <div>
+                                <h3 class="fs-2">1K</h3>
+                                <p class="fs-5">Visits</p>
+                            </div>
+                            <i class="fas fa-solid fa-eye fs-1 primary-text"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <h3 class="fs-4 mb-3">Recent Orders</h3>
+                    <div class="card chart-container">
+                        <canvas id="chart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
         <section id="customerForm">
             <h2 class="p-2 fw-bold">Customer Manage</h2>
 
@@ -59,7 +116,7 @@
                     <form class="row g-3">
                         <div class="col-md-6">
                             <label for="customer_id" class="form-label">Customer ID</label>
-                            <input type="text" class="form-control" id="customer_id">
+                            <input type="text" placeholder="CM-0000" class="form-control" id="customer_id">
                         </div>
                         <div class="col-md-6">
                             <label for="first_name" class="form-label"> First Name</label>
@@ -219,7 +276,7 @@
             <div class="row my-5 container-fluid">
                 <h3 class="fs-4 mb-3">Cart</h3>
                 <div class="col">
-                    <table class="table bg-white rounded shadow-sm  table-hover" id="cartTbl">
+                    <table class="table rounded shadow-sm table-hover" id="cartTbl">
                         <thead>
                             <tr>
                                 <th scope="col">Item ID</th>
@@ -232,8 +289,8 @@
                     </table>
                 </div>
             </div>
-            <div class="place-orderbtn">
-                <form class="d-flex container">
+            <div class="place-orderbtn container-fluid">
+                <form class="d-flex">
                     <div class="col-md-3 px-1 d-flex gap-4 ">
                         <label for="total-cost" class="form-label">Total</label>
                         <input type="text" class="form-control" id="total-cost">
@@ -247,6 +304,7 @@
     </main>
 
     <script src="assets/lib/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="controller/CustomerController.js" type="module"></script>
     <script src="controller/ItemController.js" type="module"></script>

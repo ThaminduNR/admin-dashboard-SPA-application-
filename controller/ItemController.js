@@ -3,11 +3,33 @@ import {saveItem, getAllItems, updateItem,deleteItem} from "../db/db2.js";
 
 export class ItemController{
     constructor() {
-       $("#item-add-btn").click(this.handleSaveItem.bind(this));
+       $("#item-add-btn").click(this.handleSaveItemValidation.bind(this));
        $("#item-update-btn").click(this.handleUpdateItem.bind(this));
        $("#item-delete-btn").click(this.handleDeleteItem.bind(this));
        this.handleLoadItem();
        this.itemTableSelectedRaw();
+
+    }
+
+    handleSaveItemValidation(){
+
+        var item_id = $("#item_ID").val();
+        var item_name = $("#first_name").val();
+        var itemQty = $("#item_qty").val();
+        var itemPrice = $("#price").val();
+
+        const regexNumber= /^(P-)([0-9]{4,}$)/;
+        if (!regexNumber.test(item_id)){
+            alert("Invalid Id");
+        }else if(!item_name){
+            alert("Invalid Name");
+        }else if(!itemQty){
+            alert("Invalid Quantity");
+        }else if(!itemPrice){
+            alert("Invalid price");
+        }else {
+            this.handleSaveItem();
+        }
 
     }
 
@@ -29,9 +51,7 @@ export class ItemController{
         });
     }
 
-    handleSaveItemValidation(){
 
-    }
 
     handleSaveItem(){
         console.log("Item-added");

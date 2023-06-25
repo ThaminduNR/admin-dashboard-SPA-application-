@@ -70,9 +70,9 @@ export class OrderController{
 
       $("#cartTbl").append(`
          <tr>
-            <td>${ct.itemID}</td>> 
-            <td>${ct.qty}</td>> 
-            <td>${ct.total}</td>> 
+            <td>${ct._itemID}</td>> 
+            <td>${ct._qty}</td>> 
+            <td>${ct._total}</td>> 
             <td><button type="button" style="margin: 0; padding: 3px 10px; color: #edeff1;background-color: #ff253a; border: none" class="raw">Delete</button></td>
             
         </tr>`);
@@ -120,6 +120,21 @@ export class OrderController{
       let order = new Order(orderId,custId,cartArray);
 
       placeOrder(order);
+
+      //clear cart array
+      while (cartArray.length > 0 ){
+         cartArray.pop();
+      }
+      console.log(cartArray);
+      this.clearCartAndTotal();
+   }
+
+   clearCartAndTotal(){
+      $("#total-cost").val("");
+      $("#cartTbl > tr").remove();
+      $("#custIdSet").val("");
+      $("#orderID").val("");
+
 
    }
 
